@@ -1,1 +1,17 @@
-<p>navigation works!</p>
+
+<nav class="navbar navbar-expand-lg bg-body-white">
+    <div class="container-fluid">
+        <img class="navbar-brand" src="../../assets/images/itstep-logo.png" alt="Logo" routerLink="/">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav navItems">
+          <a class="nav-link" routerLink="/" [routerLinkActive]="'activeNav'" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+          <a class="nav-link" routerLink="/rooms" [routerLinkActive]="'activeNav'">Rooms</a>
+          <a class="nav-link" routerLink="/hotels" [routerLinkActive]="'activeNav'">Hotels</a>
+          <a class="nav-link" routerLink="/booked-rooms" [routerLinkActive]="'activeNav'">Booked Rooms</a>
+        </div>
+      </div>
+    </div>
+  </nav>    

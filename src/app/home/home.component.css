@@ -1,0 +1,101 @@
+.header-main {
+    height: 20vh;
+}
+.header {
+    position: relative;
+}
+img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    min-height: 20vh;    
+}
+
+.heading, .heading span {
+    display: flex;
+    align-items: center;
+}
+
+.main {
+    color: white;
+    position: absolute;
+    right: 10px;
+    padding-right: 15%;
+    font-weight: bold;
+    padding-top: 15px;
+}
+.main h1 {
+    font-size: 21px;
+    position: relative;
+}   
+.para p {
+    text-align: end;
+    padding-right: 15px;
+}
+.para button {
+    position: absolute;
+    top: 50%;   
+    left: 30%;
+    transform: translate(40%, 50%);
+    margin-top: 20px;
+    border: none;
+    border-radius: 15px;
+    height: 40px;
+    padding-inline: 20px;
+    background-color: #004F94;
+    color: white;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.para button:hover {
+    background-color: #4278a6;
+}
+.guests-heading {
+    color: gray;
+}
+.guests-heading hr {
+    width: 100%;
+}
+.h2 {
+    min-width: fit-content;
+    text-align: center;
+    padding-inline: 15px;
+}
+.content-usp {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding-top: 50px;
+}
+.item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.icon {
+    border: 1px solid  #86CCD5;
+    width: min-content;
+    padding: 30px;
+    border-radius: 50px;
+    margin: 0 auto;
+    color: #86CCD5;
+    transition: 0.5s;
+}
+.icon:hover {
+    color: white;
+    background-color: #86CCD5;
+}
+.icon svg {
+    height: 25px;
+    width: 25px;
+}
+.item a {
+    font-weight: bold;
+    color: #86CCD5;
+    transition: 0.4s;
+    text-decoration: none;
+}
+.item > a:hover {
+    color: black;
+}
