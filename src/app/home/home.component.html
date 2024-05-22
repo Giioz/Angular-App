@@ -1,7 +1,7 @@
-<section>
+<section class="bg-sect">
     <div class="header-main">
         <div class="header">
-            <img src="assets/images/hotel-bg.jpg" alt="bg">
+            <img class="cover" src="assets/images/hotel-bg.jpg" alt="bg">
             <div class="main">
                 <div class="heading">
                     <span>
@@ -29,15 +29,25 @@
     </div>
 
 </section>
-<section>
+<section class="sect-2">
     <div class="guests-fav p-5">
-        <div class="guests-heading d-flex gap-5">
+        <div class="guests-heading d-flex">
             <hr>
             <h2 class="h2">Guests Favorite Rooms</h2>
             <hr>
         </div>
         <div class="content">
-            <p>content</p>
+            <div class="content-card" *ngFor="let room of favouriteRooms">
+                <div class="card-img">
+                    <img [src]="room.images[0].source" alt="test">
+                </div>
+                <div class="card-info">
+                    <h4>{{room.name}}</h4>
+                    <p>{{'Maximum Guests: ' + room.maximumGuests}}</p>
+                    <p>{{'$ ' + room.pricePerNight}}</p>
+                    <button class="details-btn">See Details</button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="usp-section p-5" width="100%">

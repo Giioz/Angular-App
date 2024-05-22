@@ -9,6 +9,6 @@ export class ApiService {
   constructor(public http: HttpClient) {}
 
   getRooms(){
-    this.http.get("")
+    return this.http.get("https://hotelbooking.stepprojects.ge/api/Hotels/GetHotel/3")
   }
 }

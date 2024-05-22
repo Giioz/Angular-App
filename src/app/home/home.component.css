@@ -1,14 +1,12 @@
 .header-main {
-    height: 20vh;
+    height: 25vh;
 }
 .header {
     position: relative;
 }
-img {
-    position: absolute;
-    z-index: -1;
+.cover {
     width: 100%;
-    min-height: 20vh;    
+    min-height: 25vh;
 }
 
 .heading, .heading span {
@@ -18,26 +16,22 @@ img {
 
 .main {
     color: white;
-    position: absolute;
     right: 10px;
-    padding-right: 15%;
+    padding-right: 5%;
     font-weight: bold;
     padding-top: 15px;
+    position: absolute;
+    top: 20px;
 }
 .main h1 {
     font-size: 21px;
-    position: relative;
 }   
 .para p {
     text-align: end;
     padding-right: 15px;
 }
 .para button {
-    position: absolute;
-    top: 50%;   
-    left: 30%;
-    transform: translate(40%, 50%);
-    margin-top: 20px;
+    margin-right: 20px;
     border: none;
     border-radius: 15px;
     height: 40px;
@@ -46,6 +40,7 @@ img {
     color: white;
     font-weight: bold;
     transition: 0.5s;
+    float: right;
 }
 .para button:hover {
     background-color: #4278a6;
@@ -98,4 +93,129 @@ img {
 }
 .item > a:hover {
     color: black;
+}
+.sect-2 {
+    padding-top: 10%;
+    height: 100%;
+}
+.content-card {
+    width: 200px;
+    height: 350px;
+    padding: 20px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+.content-card:hover {
+    transform: scale(1.03);
+}
+.card-img img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+}
+.card-info button {
+    border: 1px solid #86CCD5;
+    background-color: #86CCD5;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.card-info button:hover {
+    border: 1px solid #86CCD5;
+    background-color: aliceblue;
+    color: #86CCD5;
+}
+.card-info h4 {
+    font-size:17px;
+}
+.content {
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:30px;
+}
+
+
+
+
+@media screen and (min-width: 800px) {
+    .main h1 {
+        font-size: 29px;
+    }
+    .main p {
+        font-size: 18px;
+    }
+    .main {
+        right: 30px;
+    }
+    .sect-2 {
+        padding-top: 10%;
+    }
+    .cover {
+        min-height: 30vh;
+    }
+    .content-card {
+        width: 250px;
+        height: 400px;
+    }
+}
+@media screen and (min-width: 1150px){
+    .sect-2 {
+        padding-top: 100px;
+    }
+}
+@media screen and (min-width:1274px){
+    .sect-2 {
+        padding-top: 150px;
+    }
+    .main {
+        right: 165px;
+    }
+    .main h1{
+        font-size: 39px;
+    }
+}
+@media screen and (min-width:1420px){
+    .sect-2 {
+        padding-top: 200px;
+    }
+    .content-usp {
+        display: flex;
+        flex-direction: row;
+    }
+}
+@media screen and (min-width:1712px){
+    .sect-2 {
+        padding-top: 250px;
+    }
+    .main {
+        margin-top: 50px;
+        right: 300px;
+    }
+    .main h1 {
+        font-size: 34px;
+    }
+    .main button {
+        width: 150px;
+        height: 50px;
+    }
+    .main p {
+        font-size: 24px;
+    }
+}
+@media screen and (min-width:1920px){
+    .sect-2 {
+        padding-top: 350px;
+    }
 }

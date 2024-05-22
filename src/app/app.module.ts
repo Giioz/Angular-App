@@ -10,6 +10,7 @@ import { HotelsComponent } from './hotels/hotels.component';
 import { BookedRoomsComponent } from './booked-rooms/booked-rooms.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { RestourantHomeComponent } from './Restourant/restourant-home/restourant-home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     RoomsComponent,
     HotelsComponent,
-    BookedRoomsComponent
+    BookedRoomsComponent,
+    RestourantHomeComponent
   ],
   imports: [
     BrowserModule,
