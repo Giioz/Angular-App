@@ -11,6 +11,7 @@ import { BookedRoomsComponent } from './booked-rooms/booked-rooms.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { RestourantHomeComponent } from './Restourant/restourant-home/restourant-home.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RestourantHomeComponent } from './Restourant/restourant-home/restourant
     RoomsComponent,
     HotelsComponent,
     BookedRoomsComponent,
-    RestourantHomeComponent
+    RestourantHomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

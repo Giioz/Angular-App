@@ -1,5 +1,8 @@
-.header-main {
-    height: 25vh;
+
+.bg-sect {
+    width: 100%;
+    height: 100%;
+    background-color: red;
 }
 .header {
     position: relative;
@@ -7,6 +10,7 @@
 .cover {
     width: 100%;
     min-height: 25vh;
+    object-fit: cover;
 }
 
 .heading, .heading span {
@@ -94,20 +98,31 @@
 .item > a:hover {
     color: black;
 }
+.usp-section {
+    height: 100%;
+    margin: 0 0 200px 0;
+}
 .sect-2 {
-    padding-top: 10%;
+    padding-top: 5%;
     height: 100%;
 }
 .content-card {
-    width: 200px;
-    height: 350px;
-    padding: 20px;
+    width: 100%;
+    height: 365px;
+    padding: 25px;
     background-color: aliceblue;
     border-radius: 15px;
     transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
 }
 .content-card:hover {
     transform: scale(1.03);
+}
+.card-img {
+    height: 50%;
 }
 .card-img img {
     border-radius: 10px;
@@ -117,8 +132,9 @@
 .card-info {
     display: flex;
     flex-direction: column;
-    gap: 5px;
     margin-top: 15px;
+    height: 50%;
+    justify-content: space-between;
 }
 .card-info button {
     border: 1px solid #86CCD5;
@@ -140,16 +156,17 @@
 .content {
     width: 100%;
     padding-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 2fr;
     gap:30px;
+    padding-inline: 50px;
+
 }
 
 
 
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 630px) {
     .main h1 {
         font-size: 29px;
     }
@@ -159,26 +176,23 @@
     .main {
         right: 30px;
     }
-    .sect-2 {
-        padding-top: 10%;
-    }
-    .cover {
-        min-height: 30vh;
+
+    .content {
+        grid-template-columns: 1fr 1fr;
+        padding: 50px;
     }
     .content-card {
-        width: 250px;
-        height: 400px;
+        width: 100%;
+        height: 100%;
     }
 }
-@media screen and (min-width: 1150px){
-    .sect-2 {
-        padding-top: 100px;
+@media screen and (min-width: 940px){
+    .content {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 50px;
     }
 }
 @media screen and (min-width:1274px){
-    .sect-2 {
-        padding-top: 150px;
-    }
     .main {
         right: 165px;
     }
@@ -187,17 +201,21 @@
     }
 }
 @media screen and (min-width:1420px){
-    .sect-2 {
-        padding-top: 200px;
+    .content {
+        grid-template-columns: auto auto auto auto;
+        justify-content: center;
+        padding: 50px;
     }
     .content-usp {
         display: flex;
         flex-direction: row;
     }
 }
-@media screen and (min-width:1712px){
-    .sect-2 {
-        padding-top: 250px;
+@media screen and (min-width:1650px){
+    .content {
+        grid-template-columns: auto auto auto auto auto auto;
+        justify-content: center;
+        padding: 50px;
     }
     .main {
         margin-top: 50px;
@@ -215,7 +233,5 @@
     }
 }
 @media screen and (min-width:1920px){
-    .sect-2 {
-        padding-top: 350px;
-    }
+
 }
