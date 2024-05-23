@@ -1,10 +1,9 @@
 nav div > img{
     width: 50px;
     border-radius: 7px;
-    padding-inline: 0;
 }
-nav {
-    padding-inline: 48px;
+.navbar {
+    padding-inline: 50px;
 }
 .navItems a{
     font-weight: bold;

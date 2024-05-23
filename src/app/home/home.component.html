@@ -28,8 +28,8 @@
         </div>
     </div>
 </section>
-<section class="sect-2">
-    <div class="guests-fav p-5">
+<section class="sect-2 space">
+    <div class="guests-fav">
         <div class="guests-heading d-flex">
             <hr>
             <h2 class="h2">Guests Favorite Rooms</h2>
@@ -44,7 +44,7 @@
                     <h4>{{room.name}}</h4>
                     <p>{{'Maximum Guests: ' + room.maximumGuests}}</p>
                     <p>{{'$ ' + room.pricePerNight}}</p>
-                    <button class="details-btn">See Details</button>
+                    <button class="details-btn" routerLink="/room-details/{{room.id}}">See Details</button>
                 </div>
             </div>
         </div>

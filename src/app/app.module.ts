@@ -8,10 +8,12 @@ import { HomeComponent } from './home/home.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { HotelsComponent } from './hotels/hotels.component';
 import { BookedRoomsComponent } from './booked-rooms/booked-rooms.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { RestourantHomeComponent } from './Restourant/restourant-home/restourant-home.component';
 import { FooterComponent } from './footer/footer.component';
+import { DetailsComponent } from './details/details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,17 @@ import { FooterComponent } from './footer/footer.component';
     HotelsComponent,
     BookedRoomsComponent,
     RestourantHomeComponent,
-    FooterComponent
+    FooterComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FontAwesomeModule,
-    HttpClientModule
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
   providers: [
     provideClientHydration()

@@ -1,0 +1,69 @@
+.booking-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding-inline: 5%;
+    padding-top: 50px;
+}
+.slider {
+    width: 100%;
+}
+.slider img {
+    width: 100%;
+}
+.form {
+    width: 100%;
+    background-color: azure;
+    padding: 30px;
+}
+.form-title {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.form-title hr{
+    width: 100%;
+}
+.form-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+    border: 1px dashed gray;
+    margin-top: 5px;
+}
+.form-info p {
+    margin: 0;
+    font-weight: bold;
+}
+.form-info p > span {
+    color: red;
+}
+.pernight {
+    color: gray !important;
+    font-weight: lighter;
+    font-size: 12px;
+}
+
+form {
+    width: 100%;
+    padding-top: 20px;
+}
+form * {
+    width: 100%;
+}
+form label {
+    margin-bottom: 5px;
+}
+form input {
+    margin-bottom: 10px;
+}
+form button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: lime;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: white;
+}
