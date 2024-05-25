@@ -7,14 +7,18 @@
 }
 .slider {
     width: 100%;
+    height: 500px;
 }
 .slider img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .form {
     width: 100%;
     background-color: azure;
     padding: 30px;
+    height: 100%;
 }
 .form-title {
     display: flex;
@@ -66,4 +70,25 @@ form button {
     padding: 5px 10px;
     font-weight: bold;
     color: white;
+}
+
+@media screen and (min-width:768px){
+    .booking-section {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+@media screen and (min-width:1024px){
+    .booking-section {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+@media screen and (min-width:1204px){
+    .booking-section {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+@media screen and (min-width:1440px){
+    .booking-section {
+        grid-template-columns: 4fr 1fr;
+    }
 }
