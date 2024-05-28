@@ -55,13 +55,15 @@ export class DetailsComponent implements OnInit{
   bookRoom(event:Event){
     event.preventDefault();
     console.log(this.bookingForm.invalid);
-    this.api.postRoom({
-      "roomID": this.roomDetails.id,
-      "checkInDate": this.bookingForm.value.checkIn,
-      "checkOutDate": this.bookingForm.value.checkOut,
-      "customerName": this.bookingForm.value.customerName,
-      "customerPhone": this.bookingForm.value.customerPhone,
-    }).subscribe(data => data)
+    if(this.roomDetails){
+      this.api.postRoom({
+        "roomID": this.roomDetails.id,
+        "checkInDate": this.bookingForm.value.checkIn,
+        "checkOutDate": this.bookingForm.value.checkOut,
+        "customerName": this.bookingForm.value.customerName,
+        "customerPhone": this.bookingForm.value.customerPhone,
+      }).subscribe(data => data)
+    }
   }
 
   //
