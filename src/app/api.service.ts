@@ -16,4 +16,7 @@ export class ApiService {
   getRoomById(id:string): Observable<RoomDetails>{
     return this.http.get<RoomDetails>(`https://hotelbooking.stepprojects.ge/api/Rooms/GetRoom/${id}`)
   }
+  postRoom(body:object){
+    return this.http.post("https://hotelbooking.stepprojects.ge/api/Booking", body)
+  }
 }

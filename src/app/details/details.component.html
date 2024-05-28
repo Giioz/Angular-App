@@ -1,29 +1,188 @@
-<div class="booking-section">
-    <div class="slider">
-        <img [src]="roomDetails.images[0].source" src="../../assets/images/hotel-bg.jpg" alt="">
-    </div>
-    <div class="form">
-        <div class="form-header">
-            <div class="form-title">
-                <hr>
-                <h3>Reservations</h3>
-                <hr>    
-            </div>
-            <div class="form-info">
-                <p>{{roomDetails.name}} <span>{{'$' + roomDetails.pricePerNight }},-<span class="pernight"> per night</span></span></p>
+<section>
+    <div class="booking-section">
+        <div class="slider">
+            <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" *ngIf="roomDetails">
+                <div class="carousel-inner">
+                  <div *ngFor="let image of roomDetails.images; let i = index" [ngClass]="{'carousel-item': true, 'active': i === activeIndex}">
+                    <img [src]="image.source" class="d-block w-100">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" (click)="prev()">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" (click)="next()">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
-        <form [formGroup]="bookingForm" (ngSubmit)="bookRoom($event)">
-            <label for="check-in">Check-in</label><br>
-            <input type="date" name="" id="check-in" formControlName="checkIn"><br>
-            <label for="check-out">Check-out</label><br>
-            <input type="date" name="" id="check-out" formControlName="checkOut"><br>
-            <label for="customerName">Customer Name</label><br>
-            <input type="text" name="" id="customerName" formControlName="customerName"><br>
-            <label for="customerPhone">Customer Tel:Phone</label><br>
-            <input type="text" name="" id="customerPhone" formControlName="customerPhone"><br>
-            <p *ngIf="bookingForm.invalid">Please Fill All The Information</p>
-            <button type="submit">BOOK NOW</button>
-        </form>
-    </div>          
-</div>
+        <div class="form">
+            <div class="form-header" >
+                <div class="form-devider">
+                    <hr>
+                    <h3>Reservations</h3>
+                    <hr>    
+                </div>
+                <div class="form-info">
+                    <p *ngIf="roomDetails">{{roomDetails.name}} <span>{{'$' + roomDetails.pricePerNight }},-<span class="pernight"> per night</span></span></p>
+                </div>
+            </div>
+            <form [formGroup]="bookingForm" (ngSubmit)="bookRoom($event)">
+                <label for="check-in">Check-in</label><br>
+                <input type="date" name="" id="check-in" formControlName="checkIn"><br>
+                <label for="check-out">Check-out</label><br>
+                <input type="date" name="" id="check-out" formControlName="checkOut"><br>
+                <label for="customerName">Customer Name</label><br>
+                <input type="text" name="" id="customerName" formControlName="customerName"><br>
+                <label for="customerPhone">Customer Tel:Phone</label><br>
+                <input type="text" name="" id="customerPhone" formControlName="customerPhone"><br>
+                <p *ngIf="bookingForm.invalid">Please Fill All The Information</p>
+                <button type="submit">BOOK NOW</button>
+            </form>
+        </div>          
+    </div>
+    <main>
+        <div class="room-details">
+            <div class="form-devider details-devider">
+                <hr>
+                <h3>Room'Details</h3>
+                <hr>    
+            </div>
+            <h4>Table overview</h4>
+            <table>
+                <tr>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                      Double Bed
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                        Free Internet
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                        Free Newspaper
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                        60 square meter
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                        Beach view
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                        2 persons
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                        Double Bed
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                        Free Internet
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                        Free Newspaper
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                        Private Balcony
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                        Flat Screen TV	
+                    </td>
+                    <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        width="16" height="16" fill="currentColor" 
+                        class="bi bi-check-lg" viewBox="0 0 16 16"><path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/></svg>
+                        Jacuzzi
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="overview-sect">
+            <div class="form-devider">
+                <hr>
+                <h3>Overview</h3>
+                <hr>    
+            </div>
+            <div class="overview-switchs" >
+                <div class="switch-header">
+                    <ul>
+                        <li (click)="caseChange('overview')" [class.active]="switchCase === 'overview'">Overview</li>
+                        <li (click)="caseChange('facilities')" [class.active]="switchCase === 'facilities'">Facilities</li>
+                        <li (click)="caseChange('extra')" [class.active]="switchCase === 'extra'">Extra</li>
+                    </ul>
+                </div>
+                <div class="switch-body" [ngSwitch]="switchCase">
+                    <div class="opt default" *ngSwitchCase="'overview'">
+                        <p>Lorem ipsum dolor sit amet, 
+                            consectetur adipiscing elit. Suspendisse interdum eleifend augue, 
+                            quis rhoncus purus fermentum. In hendrerit risus arcu, in eleifend metus dapibus varius. 
+                            Nulla dolor sapien, laoreet vel tincidunt non, egestas non justo. Phasellus et mattis lectus, 
+                            et gravida urna.
+                        </p>
+                        <div class="text-sect" >
+                            <p>Donec pretium sem non tincidunt iaculis. Nunc at pharetra eros, 
+                                a varius leo. Mauris id hendrerit justo. Mauris egestas magna vitae nisi ultricies semper.
+                                 Nam vitae suscipit magna. Nam et felis nulla. Ut nec magna tortor. Nulla dolor sapien, 
+                                 laoreet vel tincidunt non, egestas non justo.
+                            </p>
+                            <img src="assets/images/restaurant-01.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="opt" *ngSwitchCase="'facilities'">
+                        <p>Phasellus sodales justo felis, a vestibulum risus mattis vitae.
+                             Aliquam vitae varius elit, non facilisis massa. Vestibulum luctus 
+                             diam mollis gravida bibendum. Aliquam mattis velit dolor, sit amet semper erat auctor vel. 
+                             Integer auctor in dui ac vehicula. 
+                            Integer fermentum nunc ut arcu feugiat, 
+                            nec placerat nunc tincidunt. Pellentesque in massa eu augue placerat cursus sed quis magna.
+                        </p>
+                    </div>
+                    <div class="opt" *ngSwitchCase="'extra'">
+                        <p>Aa vestibulum risus mattis vitae. Aliquam vitae varius elit, non facilisis massa. 
+                            Vestibulum luctus diam mollis gravida bibendum. Aliquam mattis velit dolor, 
+                            sit amet semper erat auctor vel. Integer auctor in dui ac vehicula. 
+                            Integer fermentum nunc ut arcu feugiat, nec placerat nunc tincidunt. Pellentesque 
+                            in massa eu augue placerat cursus sed quis magna.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</section>

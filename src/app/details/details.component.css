@@ -1,31 +1,55 @@
+* {
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.overview, .facilities, .extra {
+    color: red;
+}
+section {
+    width: 100%;
+    height: 100%;
+    padding: 50px 5%;
+
+}
 .booking-section {
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    width: 100%;
-    padding-inline: 5%;
-    padding-top: 50px;
+    gap: 15px
 }
 .slider {
     width: 100%;
-    height: 500px;
+    height: 100%;
+
+}
+.carousel-item img {
+    transition: 0.5s;
 }
 .slider img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 5px;
 }
 .form {
     width: 100%;
     background-color: azure;
     padding: 30px;
     height: 100%;
+    border-radius: 5px;
+
 }
-.form-title {
+.form-devider {
     display: flex;
     gap: 15px;
     justify-content: center;
+    align-items: center;
 }
-.form-title hr{
+
+
+.form-devider hr{
     width: 100%;
 }
 .form-info {
@@ -71,10 +95,103 @@ form button {
     font-weight: bold;
     color: white;
 }
+main {
+    padding-top: 70px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+}
+table tr:nth-child(odd) {
+    background-color: #F7FBFC;
+    border-bottom: 1px solid gainsboro;
+    border-top: 1px solid gainsboro;
+
+
+}
+table {
+    width: 100%;
+    margin-top: 25px;
+}
+tr {
+    width: 100%;
+    height: 35px;
+    font-size: 13px;
+}
+tr td {
+    padding-inline: 10px;
+}
+svg {
+    border-radius: 50px;
+    background-color: #86CCD5;
+    color: white;
+}
+.switch-header {
+    width: 100%;
+    padding-top: 50px;
+}
+.switch-header ul {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid gainsboro;
+}
+li {
+    transform:translateY(1px);
+    border-bottom: 1px solid gainsboro !important;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    color: #86CCD5;
+    font-size: 13px;
+    font-weight: bold;
+}
+li:hover{
+    border-width: 1px;
+    border-style: solid;
+    border-color: gainsboro;
+    border-radius: 5px 5px 0px 0px;
+    transition: 0.5s;
+    color: black;
+}
+li.active {
+    border-bottom: 1px solid white !important;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gainsboro;
+    border-radius: 5px 5px 0px 0px;
+    color: black;
+}
+.switch-body {
+    padding: 5px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.opt {
+    padding: 15px;
+}
+.text-sect {
+    display: flex;
+    padding-top: 15px;
+}
+.text-sect img {
+    width: 197px;
+    height: 147px;
+}
 
 @media screen and (min-width:768px){
-    .booking-section {
+    main {
         grid-template-columns: 2fr 1fr;
+    }
+    .text-sect{
+        flex-direction: column-reverse;
+    }
+    section {
+        padding-inline: 10%;
     }
 }
 @media screen and (min-width:1024px){
