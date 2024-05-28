@@ -47,10 +47,10 @@ export class DetailsComponent implements OnInit{
   // fetch Data funcs 
 
   getId(){
-    // this.route.params.subscribe((data:any) => this.getRoomInfo(data.id));
+    this.route.params.subscribe((data:any) => this.getRoomInfo(data.id));
   }
   getRoomInfo(id:string){
-    // this.api.getRoomById(id).subscribe((data:RoomDetails) =>  {this.roomDetails = data, console.log(this.roomDetails)})
+    this.api.getRoomById(id).subscribe((data:RoomDetails) =>  {this.roomDetails = data, console.log(this.roomDetails)})
   }
   bookRoom(event:Event){
     event.preventDefault();
