@@ -14,7 +14,7 @@ export interface RoomDetails {
   roomTypeId:number,
   maximumGuests:number,
 }
-interface Image {
+export interface Image {
   id:number;
   source: string;
   roomId:string;
@@ -36,6 +36,7 @@ export class DetailsComponent implements OnInit{
   public roomDetails!:RoomDetails;
   public activeIndex = 0;
   public switchCase:string = 'overview'
+  
   bookingForm = new FormGroup({
     checkIn: new FormControl('', Validators.required),
     checkOut: new FormControl('', Validators.required),

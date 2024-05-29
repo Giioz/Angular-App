@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
 import { ApiService } from '../api.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,14 +13,12 @@ export class HomeComponent implements OnInit{
   constructor(public api:ApiService){}
   ngOnInit(): void {
     this.getFavRooms()
-    console.log(this.favouriteRooms);
-    
   }
 
   public favouriteRooms!:any;
 
   getFavRooms(){
-    this.api.getRooms().subscribe((data:any) => this.favouriteRooms = data.rooms);
+    this.api.getRooms().subscribe((data:any) => {this.favouriteRooms = data.rooms, console.log(data)});
   }
   
 }

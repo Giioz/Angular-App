@@ -1,0 +1,48 @@
+.main-sect, h1 {
+    padding: 30px 5%;
+    display: grid;
+    grid-template-columns:1fr;
+    gap: 15px;
+}
+section {
+    height: 100vh;
+}
+.hotel-card {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+}
+.hotel-image img {
+    width: 100%;
+}
+.content-card {
+    transition: 0.5s;
+}
+.hotel-card:hover .content-card {
+    transform: translateY(-300px);
+}   
+.hotel-content {
+    width: 100%;
+    height: 50px;
+    background-color: #004F94;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+p {
+    margin: 0px;
+}
+
+@media screen and (min-width:750px) {
+    .main-sect {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    section {
+        height: 80vh;
+    }
+}
+

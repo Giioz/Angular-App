@@ -1,1 +1,18 @@
 <p>restourant-home works!</p>
+<section>
+    <!-- <app-filter></app-filter> -->
+    <div class="content" >
+        <div class="content-card" *ngFor="let product of products">
+            <div class="card-img">
+                <img [src]="product.image" alt="test">
+            </div>
+            <div class="card-info">
+                <h4>{{product.name}}</h4>
+                <p>{{'$' + product.price}}</p>
+                <p style="font-weight:bold">Nuts: <span *ngIf="product.nuts">yes</span><span *ngIf="!product.nuts">No</span></p>
+                <p style="font-weight:bold">Vegetarian: <span *ngIf="product.vegeterian">yes</span><span *ngIf="!product.vegeterian">No</span></p>
+                <button class="details-btn">tocart</button>
+            </div>
+        </div>
+    </div>
+</section>

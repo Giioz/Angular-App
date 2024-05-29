@@ -1,1 +1,16 @@
-<p>rooms works!</p>
+<h1 style="text-align: center;">{{hotelName}}</h1>
+<section>
+    <div class="content">
+        <div class="content-card" *ngFor="let room of rooms">
+            <div class="card-img">
+                <img [src]="room.images[0].source" alt="test">
+            </div>
+            <div class="card-info">
+                <h4>{{room.name}}</h4>
+                <p>{{'Maximum Guests: ' + room.maximumGuests}}</p>
+                <p>{{'$ ' + room.pricePerNight}}</p>
+                <button class="details-btn" routerLink="/room-details/{{room.id}}">See Details</button>
+            </div>
+        </div>
+    </div>
+</section>

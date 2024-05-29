@@ -11,6 +11,12 @@ nav div > img{
 .navItems a:hover{
     color: #86CCD5;
 }
+.navItems a:last-child:hover {
+    color: crimson;
+}
 .activeNav {
     color: #86CCD5;
+}
+.activeNavRes {
+    color:crimson;
 }

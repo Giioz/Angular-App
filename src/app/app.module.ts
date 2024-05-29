@@ -8,12 +8,16 @@ import { HomeComponent } from './home/home.component';
 import { RoomsComponent } from './rooms/rooms.component';
 import { HotelsComponent } from './hotels/hotels.component';
 import { BookedRoomsComponent } from './booked-rooms/booked-rooms.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RestourantHomeComponent } from './Restourant/restourant-home/restourant-home.component';
 import { FooterComponent } from './footer/footer.component';
 import { DetailsComponent } from './details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoadingComponent } from './loading/loading.component';
+import { InterceptService } from './intercept.service';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { FilterSectionComponent } from './Restourant/filter-section/filter-section.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BookedRoomsComponent,
     RestourantHomeComponent,
     FooterComponent,
-    DetailsComponent
+    DetailsComponent,
+    LoadingComponent,
+    NotfoundComponent,
+    FilterSectionComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:InterceptService,
+      multi:true,
+    }
   ],
   bootstrap: [AppComponent]
 })
