@@ -33,6 +33,20 @@
     height: 50%;
     justify-content: space-between;
 }
+.card-info p {
+    background-color: aliceblue;
+    padding: 5px;
+    border-radius: 15px;
+}
+.ingredients {
+    background-color: aliceblue;
+    border-radius: 15px;
+    padding: 0px;
+}
+.ingredients * {
+    margin: 0px;
+    padding: 0px;
+}
 .card-info button {
     border: 1px solid limegreen;
     background-color: limegreen;
@@ -48,8 +62,9 @@
     color: white;
 }
 .card-info h4 {
-    font-size:17px;
+    font-size:20px;
     font-weight: bold;
+    color: white;
 }
 .content {
     width: 100%;
