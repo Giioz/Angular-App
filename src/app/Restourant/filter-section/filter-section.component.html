@@ -1,1 +1,21 @@
-<p>filter-section works!</p>
+<div class="parent">
+    <div>
+        <p>Filter</p>
+    </div>
+    <div>
+        <div class="slider">
+            <label for="">Spiciness: <span *ngIf="rangeVal === ''">Not Choosen</span><span *ngIf="rangeVal >= 0" style="margin-left: 20px; font-size:18px; font-weight:bold; color: red;" >{{rangeVal}}</span></label>
+            <input class="range" #range type="range" name="" id="" min="0" max="4" value="0"  step="1" [(ngModel)]="rangeVal" (input)="onRangeChange($event)">
+        </div>
+        <div class="inputs">
+            <input type="checkbox" name="" id="nuts" [(ngModel)]="isNuts"  (change)="isNutsChecked($event)">
+            <label for="nuts">With Nuts</label><br>
+            <input type="checkbox" name="" id="vegetarian" [(ngModel)]="isVegetarian" (change)="isVegetarianChecked($event)">
+            <label for="vegetarian">Vegetarian Only</label>
+        </div>
+    </div>
+    <div class="btns">
+        <button (click)="reset()">Reset</button><br>
+        <button type="submit" (click)="submit()">Apply Filter</button>
+    </div>
+</div>

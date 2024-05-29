@@ -1,3 +1,22 @@
+.low-spiciness {
+    color: limegreen;
+}
+.high-spiciness {
+    color: crimson;
+}
+.onclick {
+    background-color: red;
+    color: white;
+    transition: 0.4s;
+}
+main ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+main {
+    padding-top: 20px;
+}
 .products {
     width: 100%;
     background-color: blue;
@@ -68,14 +87,45 @@
 }
 .content {
     width: 100%;
-    padding-top: 30px;
+    padding: 40px 0px 50px 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
     padding-inline: 50px;
     gap: 15px;
 }
+.notfound {
+    color: red;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+.main-section {
+    position: relative;
+    height: 100%;
+}
+section {
+    background-color: #E0F7FA;
+    min-height: 100vh;
+}
 
+
+@media screen and (min-width:1030px) {
+    main {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        background-color: red;
+    }
+}
 
 /* @media screen and (min-width: 630px) {
     .content {
