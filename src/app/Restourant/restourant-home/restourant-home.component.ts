@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestourantApiService } from '../restourant-api.service';
+import { BasketOpenerService } from '../basket-opener.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-restourant-home',
@@ -11,14 +13,14 @@ export class RestourantHomeComponent implements OnInit{
     this.getProductsData()
     this.getCategories()
   }
-  constructor(public api:RestourantApiService){}
+  constructor(public api:RestourantApiService, public basket: BasketOpenerService){}
 
   public products!:Array<any>;
   public products1!:Array<any>;
   public productsLength!:number;
   public activeIndex!:any;
   public categories!:Array<any>;
-
+  public basketLength!:number;
 
 
   getProductsData(){
@@ -48,5 +50,39 @@ export class RestourantHomeComponent implements OnInit{
   }
   setActive(id:any){
     this.activeIndex = id;
+  }
+  addToCart(data:any){
+    const body = {
+        "quantity": 1,
+        "price": data.price,
+        "productId": data.id,
+      }
+
+    this.api.addItemToBasket(body).subscribe(data => {
+      this.basketInfo()
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Successfully Added To Cart!"
+      });
+    });
+  }
+  basketInfo(){
+    this.api.getBasketItems().subscribe((data:any) => {this.basketLength = data.length, this.sendSubject(), console.log(this.basketLength);
+    });
+    
+  }
+  sendSubject(){
+    this.basket.subject.next(this.basketLength)
   }
 }

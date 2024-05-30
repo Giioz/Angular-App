@@ -20,6 +20,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { FilterSectionComponent } from './Restourant/filter-section/filter-section.component';
 import { HotelRoomsComponent } from './hotel-rooms/hotel-rooms.component';
 import { HotelFilterComponent } from './hotel-filter/hotel-filter.component';
+import { BasketComponent } from './Restourant/basket/basket.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HotelFilterComponent } from './hotel-filter/hotel-filter.component';
     NotfoundComponent,
     FilterSectionComponent,
     HotelRoomsComponent,
-    HotelFilterComponent
+    HotelFilterComponent,
+    BasketComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,8 @@ import { DetailsComponent } from './details/details.component';
 import { RestourantHomeComponent } from './Restourant/restourant-home/restourant-home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HotelRoomsComponent } from './hotel-rooms/hotel-rooms.component';
+import { BasketComponent } from './Restourant/basket/basket.component';
+import { basketGuard } from './Restourant/basket.guard';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -17,6 +19,7 @@ const routes: Routes = [
   {path: "room-details/:id", component:DetailsComponent},
   {path: "hotel-rooms/:id", component:HotelRoomsComponent},
   {path: "hotel-restaurant", component:RestourantHomeComponent},
+  {path: "cart", component:BasketComponent, canActivate:[basketGuard]},
   {path: "**", component:NotfoundComponent},
 ];
 

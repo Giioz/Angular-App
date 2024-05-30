@@ -20,3 +20,8 @@ nav div > img{
 .activeNavRes {
     color:crimson;
 }
+.length {
+    padding: 5px;
+    background-color: red;
+    border-radius: 50%;
+}

@@ -1,0 +1,87 @@
+img {
+    width: 100px;
+    height: 100px;
+}
+th {
+    min-width: 50px;
+}
+table {
+    margin: 0 auto;
+    width: 100%;
+} 
+section {
+    padding: 80px 5%;
+    min-height: 100vh;
+}
+.qty {
+    text-align: center;
+
+}
+.qty button {
+    width: 15px;
+    border-radius: 50%;
+    background-color: lime;
+    border: none;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+svg {
+    margin-left: 5px;
+}
+.content {
+    border-top: 1px solid gainsboro;
+}
+tbody {
+    margin-bottom: 10px ;
+}
+.checkout {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    padding: 20px;
+    border: 10px;
+}
+.checkout input {
+    height: 50px;
+}
+.checkout button {
+    width: 50%;
+    border: none;
+    background-color: lime;
+    padding: 10px;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+}
+.checkout input {
+    width: 50%;
+}
+
+
+@media screen and (min-width:800px) {
+    .qty {
+        text-align: start;
+
+    }
+    .qty button {
+        width: 25px;
+        height: 25px;
+        margin-inline: 3px;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    section {
+        width: 800px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    section {
+        width: 1200px;
+    }
+}
