@@ -25,4 +25,16 @@ export class ApiService {
   getHotelById(id:number){
     return this.http.get(`https://hotelbooking.stepprojects.ge/api/Hotels/GetHotel/${id}`)
   }
+  getAllRoom(){
+    return this.http.get("https://hotelbooking.stepprojects.ge/api/Rooms/GetAll")
+  }
+  filterRoom(body:object){
+    return this.http.post("https://hotelbooking.stepprojects.ge/api/Rooms/GetFiltered", body)
+  }
+  getBooked(){
+    return this.http.get("https://hotelbooking.stepprojects.ge/api/Booking")
+  }
+  deleteBooking(id:number){
+    return this.http.delete(`https://hotelbooking.stepprojects.ge/api/Booking/${id}`)
+  }
 }

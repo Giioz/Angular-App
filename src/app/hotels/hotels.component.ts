@@ -20,6 +20,6 @@ export class HotelsComponent implements OnInit{
     this.api.getHotels().subscribe(data => {console.log(data), this.hotels = data});
   }
   viewRooms(hotelId:number){
-    this.route.navigate([`/rooms/${hotelId}`])
+    this.route.navigate([`/hotel-rooms/${hotelId}`])
   }
 }

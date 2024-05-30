@@ -13,7 +13,9 @@ section {
     padding: 50px 5%;
 
 }
-
+.ng-valid:focus {
+    outline: 1px solid limegreen;
+}
 .booking-section {
     width: 100%;
     display: flex;

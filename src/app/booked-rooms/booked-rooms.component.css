@@ -1,0 +1,30 @@
+section {
+    padding: 50px 5%;
+}
+td button {
+    border: none;
+    background-color: red;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    height: 25px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+td button span{
+    display: none;
+}
+
+
+@media screen and (min-width:600px) {
+    td button span {
+        display: inline;
+    }
+    td button {
+        padding: 15px 10px;
+    }
+    
+}

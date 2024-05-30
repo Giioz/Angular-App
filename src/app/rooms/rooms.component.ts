@@ -11,16 +11,16 @@ import { ApiService } from '../api.service';
 export class RoomsComponent implements OnInit{
   constructor(public route: ActivatedRoute, public api:ApiService){}
   ngOnInit(): void {
-    this.getId()
+    this.getAllRoom()
   }
 
   public rooms!:Array<any>;
-  public hotelName!:string;
 
-  getId(){
-    this.route.params.subscribe((data:any) => this.getRoomsByHotel(data.id));
+  getAllRoom(){
+    this.api.getAllRoom().subscribe((data:any) => this.rooms = data);
   }
-  getRoomsByHotel(id:number){
-    this.api.getHotelById(id).subscribe((data:any) => {this.rooms = data.rooms, this.hotelName = data.name});
+  onFinalData(data:any){
+    this.rooms = data
   }
+  
 }

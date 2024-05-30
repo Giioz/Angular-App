@@ -18,6 +18,8 @@ import { LoadingComponent } from './loading/loading.component';
 import { InterceptService } from './intercept.service';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { FilterSectionComponent } from './Restourant/filter-section/filter-section.component';
+import { HotelRoomsComponent } from './hotel-rooms/hotel-rooms.component';
+import { HotelFilterComponent } from './hotel-filter/hotel-filter.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FilterSectionComponent } from './Restourant/filter-section/filter-secti
     DetailsComponent,
     LoadingComponent,
     NotfoundComponent,
-    FilterSectionComponent
+    FilterSectionComponent,
+    HotelRoomsComponent,
+    HotelFilterComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 export interface RoomDetails {
   id:number,
@@ -38,10 +39,19 @@ export class DetailsComponent implements OnInit{
   public switchCase:string = 'overview'
   
   bookingForm = new FormGroup({
-    checkIn: new FormControl('', Validators.required),
+    checkIn: new FormControl('', [
+      Validators.required,
+    
+    ]),
     checkOut: new FormControl('', Validators.required),
-    customerName: new FormControl('', Validators.required),
-    customerPhone: new FormControl('', Validators.required),
+    customerName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(4)
+    ]),
+    customerPhone: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6)
+    ]),
   })
 
 
@@ -55,16 +65,32 @@ export class DetailsComponent implements OnInit{
   }
   bookRoom(event:Event){
     event.preventDefault();
-    console.log(this.bookingForm.invalid);
-    if(this.roomDetails){
+    console.log(this.bookingForm);
+    if(!this.bookingForm.invalid){
       this.api.postRoom({
         "roomID": this.roomDetails.id,
         "checkInDate": this.bookingForm.value.checkIn,
         "checkOutDate": this.bookingForm.value.checkOut,
         "customerName": this.bookingForm.value.customerName,
         "customerPhone": this.bookingForm.value.customerPhone,
-      }).subscribe(data => data)
+      }).subscribe({})
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+        }
+      });
+      Toast.fire({
+        icon: "success",
+        title: "Room Booked Successfully"
+      });
     }
+
   }
 
   //
