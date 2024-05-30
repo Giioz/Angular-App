@@ -2,7 +2,7 @@
     <div class="booking-section">
         <div class="slider">
             <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" *ngIf="roomDetails">
-                <div class="carousel-inner">
+                <div class="carousel-inner imghead">
                   <div *ngFor="let image of roomDetails.images; let i = index" [ngClass]="{'carousel-item': true, 'active': i === activeIndex}">
                     <img [src]="image.source" class="d-block w-100">
                   </div>

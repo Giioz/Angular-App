@@ -70,7 +70,7 @@
     .parent {
         position: sticky;
         z-index: 999;
-        top: 50px;
+        top: 20vh;
         width: 300px;
         margin: 0;
         opacity: 100%;
