@@ -61,11 +61,10 @@ export class DetailsComponent implements OnInit{
     this.route.params.subscribe((data:any) => this.getRoomInfo(data.id));
   }
   getRoomInfo(id:string){
-    this.api.getRoomById(id).subscribe((data:RoomDetails) =>  {this.roomDetails = data, console.log(this.roomDetails)})
+    this.api.getRoomById(id).subscribe((data:RoomDetails) =>  {this.roomDetails = data})
   }
   bookRoom(event:Event){
     event.preventDefault();
-    console.log(this.bookingForm);
     if(!this.bookingForm.invalid){
       this.api.postRoom({
         "roomID": this.roomDetails.id,

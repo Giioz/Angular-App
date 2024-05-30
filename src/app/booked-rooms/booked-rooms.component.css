@@ -25,6 +25,14 @@ td button span{
     }
     td button {
         padding: 15px 10px;
+        width: 150px;
     }
     
+}
+
+@media screen and (min-width: 1200px) {
+    section {
+        width: 1200px;
+        margin: 0 auto;
+    }
 }

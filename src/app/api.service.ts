@@ -34,7 +34,7 @@ export class ApiService {
   getBooked(){
     return this.http.get("https://hotelbooking.stepprojects.ge/api/Booking")
   }
-  deleteBooking(id:number){
+  deleteBooking(id:number): Observable<any>{
     return this.http.delete(`https://hotelbooking.stepprojects.ge/api/Booking/${id}`)
   }
 }
